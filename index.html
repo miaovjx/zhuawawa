@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi,width=640,user-scalable=0">
+        <title>浪漫七夕 沃有好礼</title>
+        <link rel="stylesheet" href="css/gx-animate.min.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        <input type="hidden" class="encrypted" value="<?php echo $encrypted;?>"/>  <!-- 状态 -->
+        <!-- load 预加载 -->
+        <div class="loading">
+            <div class="loading-text">
+                <span class="loading-text-words">L</span>
+                <span class="loading-text-words">O</span>
+                <span class="loading-text-words">A</span>
+                <span class="loading-text-words">D</span>
+                <span class="loading-text-words">I</span>
+                <span class="loading-text-words">N</span>
+                <span class="loading-text-words">G</span>
+            </div>
+        </div>
+        <div class="page-wrap ">
+            <!-- 1 首页 -->
+            <div class="page page1 none" data-lock-prev="true" data-lock-next="true">
+                <div class="page_inner">
+                    <img class="logo bounceInLeft delay200" src="images/logo.png" alt=""/>
+                    <img class="gifts1 zoomIn delay400" src="images/gifts1.png" alt=""/>
+                    <img class="gifts2 zoomIn delay600" src="images/gifts2.png" alt=""/>
+                    <img class="p1_1 rollIn delay800" src="images/p1_1.png" alt=""/>
+                    <a href="javascript:;" class="btn_join fadeInDown delay1000"></a>
+                    <a href="javascript:;" class="btn_rule bounceInRight delay200"></a>
+                </div>
+            </div>
+            <!-- 2  -->
+            <div class="page page2" data-lock-prev="true" data-lock-next="true">
+                <div id="box">
+                    <div class="" id="inner" style="position: relative; ">
+                        <div class="game_wrap">
+                            <div class="hook1">
+                                <img class="noselect" src="images/hook1.png" alt="">
+                            </div>
+                            <div class="hook2">
+                                <img class="noselect" src="images/hook2.png" alt="">
+                            </div>
+                            <img class="gifts_init" src="images/gifts_init.png" alt="">
+                            <img class="gifts" src="images/gifts.png" alt="">
+                            <img class="mechine" src="images/mechine.png" alt="">
+                        </div>
+                        <div class="btns">
+                            <a href="javascript:;" class="btn_left"></a>
+                            <a href="javascript:;" class="btn_go"></a>
+                            <a href="javascript:;" class="btn_right"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 3  -->
+            <div class="page page3">
+            </div>
+        </div>
+    </body>
+    <!-- 弹框 -->
+    <div class="tk tk-load none">
+        <div class="tkIn">
+            <img src="images/loading.gif" height="60" width="60" alt=""/>
+            <p class="tlWrd">拼命加载中，请耐心等待</p>
+        </div>
+    </div>
+    <!-- 规则 -->
+    <div class="tk tk-rule none">
+        <div class="tkIn">
+            <div class="rule_wrap">
+                <a href="javascript:;" class="btn_close"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 首页微信关注 -->
+    <div class="tk tk-tips none">
+        <div class="tkIn">
+            <div class="tips_wrap">
+                <img class="code1" src="images/code1.png" alt=""/>
+                <a href="javascript:;" class="btn_close"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 分享 -->
+    <div class="tk tk-share none">
+        <div class="tkIn">
+            <div class="share_wrap">
+                <img class="code2" src="images/code2.png" alt=""/>
+                <a href="javascript:;" class="btn_close"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 获奖1 -->
+    <!--     <div class="tk tk-prize tk-prize-a tk-prize-couplenum none">
+                <div class="tkIn">
+                        <div class="prize_a_wrap">
+                                <img class="prizeimg" src="images/couplenum.png" alt=""/>
+                                <a href="javascript:;" class="btn_again"></a>
+                                <a data-href="https://www.baidu.com/" href="javascript:;" class="btn_link"></a>
+                        </div>
+                </div>
+    </div> -->
+    <div class="tk tk-prize tk-prize-a tk-prize-birthnum none">
+        <div class="tkIn">
+            <div class="prize_a_wrap">
+                <img class="prizeimg" src="images/birthnum.png" alt=""/>
+                <a href="javascript:;" class="btn_again"></a>
+                <a data-href="http://m.10010.com/04067" href="javascript:;" class="btn_link"></a>
+            </div>
+        </div>
+    </div>
+    <div class="tk tk-prize tk-prize-a tk-prize-internet none">
+        <div class="tkIn">
+            <div class="prize_a_wrap">
+                <img class="prizeimg" src="images/internet.png" alt=""/>
+                <a href="javascript:;" class="btn_again"></a>
+                <a data-href="http://m.10010.com/03ZaS" href="javascript:;" class="btn_link"></a>
+            </div>
+        </div>
+    </div>
+    <div class="tk tk-prize tk-prize-a tk-prize-vedio none">
+        <div class="tkIn">
+            <div class="prize_a_wrap">
+                <img class="prizeimg" src="images/vedio.png" alt=""/>
+                <a href="javascript:;" class="btn_again"></a>
+                <a data-href="http://m.10010.com/03Zgu" href="javascript:;" class="btn_link"></a>
+            </div>
+        </div>
+    </div>
+    <div class="tk tk-prize tk-prize-a tk-prize-icecream none">
+        <div class="tkIn">
+            <div class="prize_a_wrap">
+                <img class="prizeimg" src="images/icecream.png" alt=""/>
+                <a href="javascript:;" class="btn_again"></a>
+                <a data-href="http://m.10010.com/03ZbK" href="javascript:;" class="btn_link"></a>
+            </div>
+        </div>
+    </div>
+    <div class="tk tk-prize tk-prize-a tk-prize-king none">
+        <div class="tkIn">
+            <div class="prize_a_wrap">
+                <img class="prizeimg" src="images/king.png" alt=""/>
+                <a href="javascript:;" class="btn_again"></a>
+                <a data-href="http://m.10010.com/03Zgb" href="javascript:;" class="btn_link"></a>
+            </div>
+        </div>
+    </div>
+    <div class="tk tk-prize tk-prize-a tk-prize-four none">
+        <div class="tkIn">
+            <div class="prize_a_wrap">
+                <img class="prizeimg" src="images/4g.png" alt=""/>
+                <a href="javascript:;" class="btn_again"></a>
+                <a data-href="http://m.10010.com/03Zby" href="javascript:;" class="btn_link"></a>
+            </div>
+        </div>
+    </div>
+    <div class="tk tk-prize tk-prize-a tk-prize-woo none">
+        <div class="tkIn">
+            <div class="prize_a_wrap">
+                <img class="prizeimg" src="images/woo.png" alt=""/>
+                <a href="javascript:;" class="btn_again"></a>
+                <a data-href="http://m.10010.com/03ZbJ" href="javascript:;" class="btn_link"></a>
+            </div>
+        </div>
+    </div>
+    <div class="tk tk-prize tk-prize-a tk-prize-study none">
+        <div class="tkIn">
+            <div class="prize_a_wrap">
+                <img class="prizeimg" src="images/study.png" alt=""/>
+                <a href="javascript:;" class="btn_again"></a>
+                <a data-href="http://m.10010.com/0407I" href="javascript:;" class="btn_link"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 流量 -->
+    <div class="tk tk-prize tk-prize-b tk-prize-liuliang none">
+        <div class="tkIn">
+            <div class="prize_b_wrap">
+                <img class="prizeimg liuliangfive none" src="images/liuliang.png" alt=""/>
+                <img class="prizeimg liuliangone none" src="images/liuliangone.png" alt=""/>
+                <a href="javascript:;" class="btn_take"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 话费 -->
+    <div class="tk tk-prize tk-prize-b tk-prize-huafei none">
+        <div class="tkIn">
+            <div class="prize_b_wrap">
+                <img class="prizeimg" src="images/huafei.png" alt=""/>
+                <a href="javascript:;" class="btn_take"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 靓号 -->
+    <div class="tk tk-prize tk-prize-b tk-prize-num none">
+        <div class="tkIn">
+            <div class="prize_b_wrap">
+                <img class="prizeimg" src="images/num.png" alt=""/>
+                <a href="javascript:;" class="btn_take"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 唯品会 -->
+    <div class="tk tk-prize tk-prize-b tk-prize-wei none">
+        <div class="tkIn">
+            <div class="prize_b_wrap">
+                <img class="prizeimg" src="images/wei.png" alt=""/>
+                <a href="javascript:;" class="btn_again"></a>
+                <a href="javascript:;" data-href="https://www.baidu.com/" class="btn_take"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 留资 -->
+    <div class="tk tk-info none">
+        <div class="tkIn">
+            <div class="info_wrap">
+                <ul class="info_list">
+                    <li><input type="text" class="username" placeholder="姓名：" /></li>
+                    <li><input type="tel" class="phone" placeholder="电话：" /></li>
+                </ul>
+                <a href="javascript:;" class="btn_sub"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 再来一次 -->
+    <div class="tk tk-prize tk-prize-b tk-liuliang-again none">
+        <div class="tkIn">
+            <div class="prize_b_wrap">
+                <img class="prizeimg" style="margin-top:40px;" src="images/liuliang-again.png" alt=""/>
+                <a href="javascript:;" class="btn_again"></a>
+                <a href="javascript:;" class="btn_share"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 靓号领取步骤 -->
+    <div class="tk tk-prize tk-prize-b tk-prize-step none">
+        <div class="tkIn">
+            <div class="prize_b_wrap">
+                <img class="prizeimg" style="margin-top:60px;" src="images/step.png" alt=""/>
+                <a href="javascript:;" data-href="https://detail.tmall.com/item.htm?spm=a220z.1000880.0.0.CMf9js&id=544641036141&sku_properties=30626:35039546" class="btn_lingqu"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 留资唯品会 -->
+    <div class="tk tk-info-wei none">
+        <div class="tkIn">
+            <div class="info_wrap">
+                <ul class="info_list">
+                    <li><input type="text" class="username" placeholder="姓名：" /></li>
+                    <li><input type="tel" class="phone" placeholder="电话：" /></li>
+                    <li class="clearfix">
+                    <select name="pro" class="pro" id="provincel" style="margin-right:20px;"></select>
+                <select name="city" class="city" id="city"></select>
+            </li>
+            <li><input type="text" class="address" placeholder="详细地址：" /></li>
+        </ul>
+        <a href="javascript:;" class="btn_sub"></a>
+    </div>
+</div>
+</div>
+<div id="orientLayer" class="mod-orient-layer">
+<div class="mod-orient-layer__content"><i class="icon mod-orient-layer__icon-orient"></i>
+    <div class="mod-orient-layer__desc">为了更好的体验，请使用横屏浏览</div>
+</div>
+</div>
+<div class="qr-box">
+<div id="qr-box__img" class="qr-box__img"></div>
+<div class="qr-box__thumb qr-box__thumb_default"
+style="background-image:url(//wximg.gtimg.com/wxp/wxmoment-source/img/weixin-logo.png)"></div>
+<div id="qr-box__thumb" class="qr-box__thumb"></div>
+<div class="qr-box__text">微信扫一扫<br>手机浏览效果更佳</div>
+</div>
+<!-- js -->
+<script src="js/jweixin-1.0.0.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/pxloader-images.min.js"></script>
+<script src="js/PageSlider.js"></script>
+<script src="js/m.Tween.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
