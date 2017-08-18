@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
+        <audio id="bgmusic" class="bgmusic" src="music/bg.mp3" preload="auto"  style="visibility: hidden;"></audio>
+         <div class="soundbox"></div>
         <input type="hidden" class="encrypted" value="<?php echo $encrypted;?>"/>  <!-- 状态 -->
         <!-- load 预加载 -->
         <div class="loading">
@@ -31,6 +33,7 @@
                     <img class="p1_1 rollIn delay800" src="images/p1_1.png" alt=""/>
                     <a href="javascript:;" class="btn_join fadeInDown delay1000"></a>
                     <a href="javascript:;" class="btn_rule bounceInRight delay200"></a>
+                    <a class="u-btn-play rotate"></a>
                 </div>
             </div>
             <!-- 2  -->
@@ -96,13 +99,13 @@
     </div>
     <!-- 获奖1 -->
     <!--     <div class="tk tk-prize tk-prize-a tk-prize-couplenum none">
-                <div class="tkIn">
-                        <div class="prize_a_wrap">
-                                <img class="prizeimg" src="images/couplenum.png" alt=""/>
-                                <a href="javascript:;" class="btn_again"></a>
-                                <a data-href="https://www.baidu.com/" href="javascript:;" class="btn_link"></a>
+                        <div class="tkIn">
+                                    <div class="prize_a_wrap">
+                                                <img class="prizeimg" src="images/couplenum.png" alt=""/>
+                                                <a href="javascript:;" class="btn_again"></a>
+                                                <a data-href="https://www.baidu.com/" href="javascript:;" class="btn_link"></a>
+                                    </div>
                         </div>
-                </div>
     </div> -->
     <div class="tk tk-prize tk-prize-a tk-prize-birthnum none">
         <div class="tkIn">

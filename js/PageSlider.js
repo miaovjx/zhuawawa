@@ -11,7 +11,7 @@
         animationPlayOnce: false,
         dev: false,               //开发模式，传入数值，直接跳到正在开发的屏数
         musicUrl: false,          //是否需要背景音乐
-        shareUrl: 'https://yidian.weiyihui.com.cn/weixinshare/index.php', //默认分享方式
+        shareUrl: 'http://www.hjgmk.com/weixinshare/index.php', //默认分享方式
         baseUrl: '',      
         onSwipeUp: function () {  //swipeUp 回调
         },

@@ -1,32 +1,55 @@
 /**
  * Created by json(610330335@qq.com) .
  */
+var bgmusic = document.getElementById('bgmusic');
+document.addEventListener("WeixinJSBridgeReady", function() {
+    bgmusic.play();
+    bgmusic.pause();
+}, false);
+var url = document.location.href;
+var type = url.indexOf("again");
+if (type != -1) {
+    document.addEventListener("WeixinJSBridgeReady", function() {
+        bgmusic.pause();
+    }, false);
+} else {
+    document.addEventListener("WeixinJSBridgeReady", function() {
+        bgmusic.play();
+    }, false);
+}
+$(".u-btn-play").on('click', function() {
+    if (bgmusic.paused) {
+        bgmusic.play();
+        $(this).removeClass("zanting")
+    } else {
+        bgmusic.pause();
+        $(this).addClass("zanting")
+    }
+})
 $(function() {
     //加载图
-    var imgarr = ['images/bg1.jpg','images/hook3.png'];
+    var imgarr = ['images/bg1.jpg', 'images/hook3.png'];
     //app初始化
     var h5 = new PageSlider({
         pages: $('.page-wrap .page'),
         dev: 0, //
-        musicUrl: 'music/bg.mp3',
-        baseUrl: 'http://yj.weiyihui.com.cn/unicom_qixi/',
+        //musicUrl: 'music/bg.mp3',
+        baseUrl: 'http://lt.weiyihui.cn/unicom_qixi/',
         onchange: function() { //每一屏切换完成时的回调   
         }
     });
-    var bgmusic = document.getElementById('bgmusic');
+
     ////默认分享
     h5.wxShare('湖北联通，七夕献礼啦！', '浪漫七夕沃来送礼，参与游戏赢取话费、流量，还有大牌口红等你来拿！', '湖北联通，七夕献礼啦！', h5.baseUrl + 'index.php', h5.baseUrl + 'images/jsshare.jpg');
+    var url = document.location.href;
+    var type = url.indexOf("again");
+    if (type != -1) {
+        h5.moveTo(1, true);
+    } else {
+        h5.moveTo(0, true);
+    }
     h5._loadimg(imgarr, function() {
         setTimeout(function() {
-            var url = document.location.href;
-            var type = url.indexOf("again");
-            if (type != -1) {
-                h5.moveTo(1, true);
-                bgmusic.pause();
-            } else {
-                h5.moveTo(0, true);
-                bgmusic.play();
-            }
             $('.loading').addClass('none');
             $('.page1').removeClass('none');
             smallScreen();
@@ -102,69 +125,62 @@ $(function() {
             btnLeft.on('touchstart', function(e) {
                 e.stopPropagation();
                 e.preventDefault();
-                clearInterval(ru1);
-                ru1 = setInterval(function() {
-                    left -= num;
-                    left1 -= num;
+              gamemusci()
+                left -= num;
+                left1 -= num;
+                $hook.css({
+                    'left': left + '%'
+                });
+                $hook1.css({
+                    'left': left1 + '%'
+                });
+                if (left <= -1) {
+                    clearInterval(ru1);
+                    left = 0;
+                    left1 = 0;
                     $hook.css({
                         'left': left + '%'
                     });
                     $hook1.css({
                         'left': left1 + '%'
                     });
-                    if (left <= -1) {
-                        clearInterval(ru1);
-                        left = 0;
-                        left1 = 0;
-                        $hook.css({
-                            'left': left + '%'
-                        });
-                        $hook1.css({
-                            'left': left1 + '%'
-                        });
-                    }
-                }, 200);
+                }
             });
             btnLeft.on('touchend', function(e) {
-                setTimeout(function() {
-                    clearInterval(ru1);
-                }, 200)
+                //sound.pause();
             });
             btnRight.on('touchstart', function(e) {
                 e.stopPropagation();
                 e.preventDefault();
-                clearInterval(ru2);
-                ru2 = setInterval(function() {
-                    left += num;
-                    left1 += num;
+               gamemusci();
+                left += num;
+                left1 += num;
+                $hook.css({
+                    'left': left + '%'
+                });
+                $hook1.css({
+                    'left': left1 + '%'
+                });
+                if (left >= 71) {
+                    clearInterval(ru2);
+                    left = 70;
+                    left1 = 70;
                     $hook.css({
                         'left': left + '%'
                     });
                     $hook1.css({
                         'left': left1 + '%'
                     });
-                    if (left >= 71) {
-                        clearInterval(ru2);
-                        left = 70;
-                        left1 = 70;
-                        $hook.css({
-                            'left': left + '%'
-                        });
-                        $hook1.css({
-                            'left': left1 + '%'
-                        });
-                    }
-                }, 200);
+                }
             });
             btnRight.on('touchend', function(e) {
-                setTimeout(function() {
-                    clearInterval(ru2);
-                }, 200)
+                //sound.pause();
             });
             var isclick = false;
             btnGo.on('touchstart', function() {
                 var encrypted = $('.encrypted').val();
                 console.log('encrypted:' + encrypted);
+                gamemusci();
                 if (!isclick) {
                     isclick = true;
                     $hook1.css({
@@ -194,10 +210,10 @@ $(function() {
                             encrypted: encrypted
                         },
                         beforeSend: function() {
-                            $('.tk-load').removeClass('none');
+                            // $('.tk-load').removeClass('none');
                         },
                         success: function(data) {
-                             $('.tk-load').addClass('none');
+                            // $('.tk-load').addClass('none');
                             if (data.result == true) {
                                 setTimeout(function() {
                                     $hook1.attr({
@@ -338,6 +354,9 @@ $(function() {
                     });
                 }
             });
+            btnGo.on('touchend', function(e) {
+                //sound.pause();
+            });
         }
         return {
             init: init
@@ -424,6 +443,7 @@ $(function() {
     //唯品会优惠券,靓号领取
     $('.tk-prize-wei .btn_take,.tk-prize-step .btn_lingqu,.tk-prize-couplenum .btn_link,.tk-prize-birthnum .btn_link,.tk-prize-vedio .btn_link,.tk-prize-icecream .btn_link,.tk-prize-king .btn_link,.tk-prize-four .btn_link,.tk-prize-woo .btn_link,.tk-prize-study .btn_link').on('tap', function(ev) {
         ev.stopPropagation();
+        $('.tk').addClass('none');
         var href = $(this).attr('data-href');
         setTimeout(function() {
             window.location.href = href;
@@ -459,11 +479,24 @@ $(function() {
         }, 200)
     });
 
+    function gamemusci() {
+        $(".soundbox").html("");
+        var htm = document.createElement("audio");
+        $(".soundbox").append(htm);
+        htm.id = "sound";
+        htm.src = "music/sound.mp3";
+        var gamemusic = document.getElementById('sound');
+        gamemusic.play();
+        //ios兼容处理
+        document.addEventListener("WeixinJSBridgeReady", function() {
+            gamemusic.play();
+        }, false);
+    }
+
     function smallScreen() {
         var hei = parseInt($(window).height());
-       // document.title = hei
+        // document.title = hei
         if (hei < 1000) {
-           
             //滚动效果
             (function() {
                 var box = document.querySelector('#box');
